@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob Perry - Professional Athlete & Elite Fitness Trainer</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('jpsit.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('jpsit3.png');
+                background-size: cover;
+                background-position: 80% 30%;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .instagram-link i {
+            color: #ff6b35;
+            font-size: 32px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+            padding-top: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: #ff6b35;
+            color: #fff;
+            border: none;
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.10);
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        .cta-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .cta-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .armenian-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            border: 1px solid #ff6b35;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Content Sections */
+        .main-content {
+            padding: 0 2rem 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: -4rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.2) 100%);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            color: #ff6b35;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Highlight Section */
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            margin: 4rem 0;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .highlight-content p {
+            color: #ccc;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .highlight-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .highlight-btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .highlight-btn.outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .highlight-btn.outline:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Preview Section */
+        .preview-section {
+            margin: 4rem 0;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .preview-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.2) 100%);
+        }
+
+        .preview-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            color: #ff6b35;
+        }
+
+        .preview-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .preview-card p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .preview-link {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .preview-link:hover {
+            color: #fff;
+        }
+
+
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .close-menu-btn {
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1001;
+            }
+
+            .mobile-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            .close-menu-btn {
+                display: none;
+                position: relative;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1002;
+            }
+
+            .close-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 1000;
+                padding: 2rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .nav-links.closing {
+                animation: slideUp 0.3s ease-out;
+            }
+
+            .nav-links.active li {
+                margin: 0;
+            }
+
+            .nav-links.active a {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+
+
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .preview-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .preview-card {
+                padding: 2rem;
+            }
+
+            .highlight-section {
+                padding: 2rem;
+            }
+
+            .highlight-content h2 {
+                font-size: 2rem;
+            }
+
+            .highlight-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .highlight-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+        }
+
+        .made-by {
+            margin: 0;
+        }
+
+        .made-by a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .made-by a:hover {
+            color: #f7931e;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="jplogo.png" alt="Jacob Perry Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <img src="menu.png" alt="Open menu">
+            </button>
+            <button class="close-menu-btn" aria-label="Close menu">
+                <img src="close.png" alt="Close menu">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>JACOB PERRY</h1>
+            <h2>From Pro Athlete to Elite Trainer</h2>
+            <p>Ready to transform your game? Whether you're an athlete, parent, or anyone looking to be the best version of yourself, Jacob's proven methods will take you to the next level.</p>
+            <div class="cta-group">
+                <a href="services.html" class="cta-button">See What I Offer</a>
+                <a href="about.html" class="cta-button cta-outline">Learn My Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h2>WHY CHOOSE JACOB?</h2>
+                <p>From professional athletes to everyday people, Jacob's unique approach delivers results that speak for themselves.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Pro Experience</h3>
+                    <p>Former professional athlete who knows what it takes to compete at the highest level.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>1000+ Success Stories</h3>
+                    <p>From NFL players to rising stars, Jacob has transformed lives worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-cog"></i></div>
+                    <h3>Complete Approach</h3>
+                    <p>Physical, mental, and technical training - everything you need to dominate.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlight-section">
+            <div class="highlight-content">
+                <h2>READY TO ELEVATE YOUR GAME?</h2>
+                <p>Discover how Jacob's comprehensive training programs can transform your performance, whether you're looking to lose weight, gain muscle, improve your basketball skills, or prepare for professional competition.</p>
+                <div class="highlight-buttons">
+                    <a href="services.html" class="highlight-btn">Explore Services</a>
+                    <a href="contact.html" class="highlight-btn outline">Start Today</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section">
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="preview-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Physical Training</h3>
+                    <p>Weight loss, muscle building, and strength development with proper form.</p>
+                    <a href="services.html" class="preview-link">Learn More →</a>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon"><i class="fas fa-basketball-ball"></i></div>
+                    <h3>Basketball Training</h3>
+                    <p>Shooting, defense, and professional preparation for serious players.</p>
+                    <a href="services.html" class="preview-link">Learn More →</a>
+                </div>
+                <div class="preview-card">
+                    <div class="preview-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Mental Training</h3>
+                    <p>Build confidence and overcome mental battles in sports and life.</p>
+                    <a href="services.html" class="preview-link">Learn More →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Jacob</h3>
+                <p>Professional fitness trainer dedicated to helping individuals achieve their fitness goals. With years of experience and a passion for health and wellness, he offers personalized training programs tailored to your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> jacobperry0875@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +1(256)417-3665</p>
+                <p><i class="fas fa-map-marker-alt"></i> Los Angeles, California</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/jacobperryworkouts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/jacobperryworkouts" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jacob Perry. All rights reserved.</p>
+            <p class="made-by">Made by <a href="https://taronabgaryan.com" target="_blank">Taron</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const closeMenuBtn = document.querySelector('.close-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && closeMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('active');
+                    closeMenuBtn.style.display = 'block';
+                    mobileMenuBtn.style.display = 'none';
+                });
+
+                closeMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('closing');
+                    setTimeout(() => {
+                        navLinks.classList.remove('active', 'closing');
+                        closeMenuBtn.style.display = 'none';
+                        mobileMenuBtn.style.display = 'block';
+                    }, 300);
+                });
+
+                // Close menu when clicking on a link
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.add('closing');
+                        setTimeout(() => {
+                            navLinks.classList.remove('active', 'closing');
+                            closeMenuBtn.style.display = 'none';
+                            mobileMenuBtn.style.display = 'block';
+                        }, 300);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

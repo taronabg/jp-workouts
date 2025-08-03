@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Services - Jacob Perry Fitness</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('jpbox2.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                min-height: 100vh;
+            }
+
+            .hero-section {
+                background: rgba(0, 0, 0, 0.2) !important;
+                backdrop-filter: blur(10px);
+            }
+
+            .service-card:nth-child(5) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jpbox2.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:nth-child(3) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jpref2.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:nth-child(4) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jpcoach.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:nth-child(1) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jptrain.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:nth-child(6) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jpbasketball.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:nth-child(2) {
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('jpnba.png') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                border: 1px solid rgba(255, 107, 53, 0.3);
+            }
+
+            .service-card:not(:nth-child(5)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(1)):not(:nth-child(6)):not(:nth-child(2)) {
+                background: rgba(0, 0, 0, 0.25) !important;
+                border: 1px solid rgba(255, 107, 53, 0.2);
+            }
+
+            .pricing-section {
+                background: rgba(0, 0, 0, 0.3) !important;
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .instagram-link i {
+            color: #ff6b35;
+            font-size: 32px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 120px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            margin-bottom: 4rem;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.2) 100%);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            color: #ff6b35;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .service-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .service-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .pricing-section p {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .close-menu-btn {
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1001;
+            }
+
+            .mobile-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            .close-menu-btn {
+                display: none;
+                position: relative;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1002;
+            }
+
+            .close-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 1000;
+                padding: 2rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .nav-links.closing {
+                animation: slideUp 0.3s ease-out;
+            }
+
+            .nav-links.active li {
+                margin: 0;
+            }
+
+            .nav-links.active a {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+
+
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .hero-section {
+                padding: 2rem;
+            }
+
+            .pricing-section {
+                padding: 2rem;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+        }
+
+        .made-by {
+            margin: 0;
+        }
+
+        .made-by a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .made-by a:hover {
+            color: #f7931e;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="jplogo.png" alt="Jacob Perry Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <img src="menu.png" alt="Open menu">
+            </button>
+            <button class="close-menu-btn" aria-label="Close menu">
+                <img src="close.png" alt="Close menu">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>TRAINING SERVICES</h1>
+            <p>Comprehensive training programs designed to help athletes and anyone achieve their highest potential - whether it's being a parent, athlete, or anything in between. Jacob prepares you for battle in every aspect of life.</p>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h2>PREPARE FOR BATTLE</h2>
+            <p>Jacob helps athletes and individuals lose weight, gain muscle, and be the best at what they do - no matter what it is. From being a parent to being an athlete, he helps you prepare for every battle life throws your way.</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+                <h3>Physical Training</h3>
+                <p>Comprehensive physical development including weight loss, muscle gain, and strength building.</p>
+                <ul class="service-features">
+                    <li>Weight loss programs</li>
+                    <li>Muscle building</li>
+                    <li>Strength training</li>
+                    <li>Proper form and technique</li>
+                    <li>Exercise and weight training</li>
+                </ul>
+                <a href="contact.html" class="service-button">Get Started</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Recovery & Prevention</h3>
+                <p>Specialized programs focused on injury prevention, recovery, and maintaining peak performance.</p>
+                <ul class="service-features">
+                    <li>Stretching routines</li>
+                    <li>Recovery protocols</li>
+                    <li>Injury prevention</li>
+                    <li>Mobility work</li>
+                    <li>Performance optimization</li>
+                </ul>
+                <a href="contact.html" class="service-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-brain"></i></div>
+                <h3>Mental Training</h3>
+                <p>Develop mental confidence and overcome mental battles that come with the game and life.</p>
+                <ul class="service-features">
+                    <li>Mental confidence building</li>
+                    <li>Mental battle strategies</li>
+                    <li>Game preparation</li>
+                    <li>Stress management</li>
+                    <li>Focus and concentration</li>
+                </ul>
+                <a href="contact.html" class="service-button">Transform Mind</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-basketball-ball"></i></div>
+                <h3>Basketball Training</h3>
+                <p>Comprehensive basketball development including shooting, defense, and professional preparation.</p>
+                <ul class="service-features">
+                    <li>Shooting technique</li>
+                    <li>Defensive skills</li>
+                    <li>Professional preparation</li>
+                    <li>Playing time strategies</li>
+                    <li>Game rules and strategy</li>
+                </ul>
+                <a href="contact.html" class="service-button">Elevate Game</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-fist-raised"></i></div>
+                <h3>Boxing & Combat</h3>
+                <p>Boxing training and combat preparation for those looking to develop fighting skills.</p>
+                <ul class="service-features">
+                    <li>Boxing technique</li>
+                    <li>Combat training</li>
+                    <li>Fighting preparation</li>
+                    <li>Defensive moves</li>
+                    <li>Combat fitness</li>
+                </ul>
+                <a href="contact.html" class="service-button">Train Combat</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-trophy"></i></div>
+                <h3>Performance Optimization</h3>
+                <p>Learn how to earn more playing time and master the rules of the game for any sport.</p>
+                <ul class="service-features">
+                    <li>Playing time strategies</li>
+                    <li>Game rules mastery</li>
+                    <li>Performance enhancement</li>
+                    <li>Competitive edge</li>
+                    <li>Elite level preparation</li>
+                </ul>
+                <a href="contact.html" class="service-button">Optimize Performance</a>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="pricing-section">
+            <h2>READY TO TRANSFORM?</h2>
+            <p>Every training program is personalized to your specific goals and needs. Contact Jacob today to discuss pricing and create a custom training plan that will help you achieve your highest potential.</p>
+            <a href="contact.html" class="cta-button">Contact for Pricing</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Jacob</h3>
+                <p>Professional fitness trainer dedicated to helping individuals achieve their fitness goals. With years of experience and a passion for health and wellness, he offers personalized training programs tailored to your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> jacobperry0875@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +1(256)417-3665</p>
+                <p><i class="fas fa-map-marker-alt"></i> Los Angeles, California</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/jacobperryworkouts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/jacobperryworkouts" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jacob Perry. All rights reserved.</p>
+            <p class="made-by">Made by <a href="https://taronabgaryan.com" target="_blank">Taron</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const closeMenuBtn = document.querySelector('.close-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && closeMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('active');
+                    closeMenuBtn.style.display = 'block';
+                    mobileMenuBtn.style.display = 'none';
+                });
+
+                closeMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('closing');
+                    setTimeout(() => {
+                        navLinks.classList.remove('active', 'closing');
+                        closeMenuBtn.style.display = 'none';
+                        mobileMenuBtn.style.display = 'block';
+                    }, 300);
+                });
+
+                // Close menu when clicking on a link
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.add('closing');
+                        setTimeout(() => {
+                            navLinks.classList.remove('active', 'closing');
+                            closeMenuBtn.style.display = 'none';
+                            mobileMenuBtn.style.display = 'block';
+                        }, 300);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

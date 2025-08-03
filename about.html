@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Jacob Perry - Professional Athlete & Fitness Trainer</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('jpbball.jpeg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .instagram-link i {
+            color: #ff6b35;
+            font-size: 32px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 120px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: stretch;
+        }
+
+        .about-text {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .about-image img {
+            max-width: 90%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        .values-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-item {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.2) 100%);
+        }
+
+        .value-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .value-item p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .about-item p {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Clients Section */
+        /* Book Now Section */
+        .book-now-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-now-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+
+        .book-now-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .book-now-content p {
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .book-now-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-now-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .book-now-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .book-now-button:hover::before {
+            left: 100%;
+        }
+
+        .book-now-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .book-now-button:hover i {
+            transform: translateX(5px);
+        }
+
+        .clients-section {
+            margin-top: 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+        }
+
+        .client-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .client-header h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .client-icon {
+            font-size: 1.8rem;
+            color: #ff6b35;
+        }
+
+        .client-list p {
+            color: #ccc;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .client-list p strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .close-menu-btn {
+            display: none;
+            position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1002;
+        }
+
+        .close-menu-btn img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1001;
+            }
+
+            .mobile-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 1000;
+                padding: 2rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .nav-links.closing {
+                animation: slideUp 0.3s ease-out;
+            }
+
+            .nav-links.active li {
+                margin: 0;
+            }
+
+            .nav-links.active a {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+
+
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 2rem;
+            }
+
+            .clients-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .client-card {
+                padding: 1.5rem;
+            }
+
+            .client-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                justify-items: center;
+            }
+
+            .stat-item {
+                padding: 1.5rem 0.5rem;
+                width: 100%;
+                height: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+                word-wrap: break-word;
+                line-height: 1.2;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-item p {
+                font-size: 0.9rem;
+                line-height: 1.3;
+                text-align: center;
+            }
+
+            .book-now-section {
+                padding: 3rem 1.5rem;
+                margin: 3rem 0;
+            }
+
+            .book-now-content h2 {
+                font-size: 2rem;
+            }
+
+            .book-now-content p {
+                font-size: 1rem;
+            }
+
+            .book-now-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.1rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .about-section {
+                padding: 2rem 1rem;
+            }
+
+            .stats-section {
+                padding: 2rem 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+        }
+
+        .made-by {
+            margin: 0;
+        }
+
+        .made-by a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .made-by a:hover {
+            color: #f7931e;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Black background for overflow */
+        html {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="jplogo.png" alt="Jacob Perry Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <img src="menu.png" alt="Open menu">
+            </button>
+            <button class="close-menu-btn" aria-label="Close menu">
+                <img src="close.png" alt="Close menu">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="about-header">
+            <h1>ABOUT JACOB PERRY</h1>
+            <p>Former professional athlete turned elite fitness trainer, dedicated to transforming lives through personalized training programs and unwavering commitment to excellence.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>My Journey</h2>
+                <p>My name is Jacob Perry, raised in the projects in a low-income neighborhood—my circumstances never defined me. From a young age, I was determined to rise above, both in the classroom and on the court. I was honored to be invited to a Duke University talent search program after scoring among the top nationally on the SAT. But my true passion was always basketball.</p>
+                <p>I went 35–1 during my freshman year playing college ball in Michigan, winning a national championship. I later transferred to Shelton State for my sophomore season, finishing 25–8, and continued my journey at Alabama A&M as a junior. I entered the NBA Draft after that year, and although I went undrafted and didn’t play my senior season, I’ve never stopped grinding.</p>
+                <p>I'm known for my motto of playing with "heart over height"—leaving everything on the floor, every game. Whether it’s hitting clutch game-winners, locking up on defense, or finding the open teammate, I pride myself on doing whatever it takes to win.</p>
+                <p>Off the court, I’m a proud father of four: Jacoby Perry (13), JaBria Perry (9), Grace Perry (3), and Roman Perry (1). They are my daily motivation. I also carry the legacy of my father, Willie J. Perry, a professional boxer who once fought on ESPN and passed away on May 23, 2025. His fight lives on in me.</p>
+                <p>This is more than a game. It’s purpose, passion, and family.</p>
+            </div>
+            <div class="about-image">
+                <img src="jpbball.jpeg" alt="Jacob Perry - Professional Trainer">
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Clients Transformed Worldwide</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Global</h3>
+                    <p>US & Overseas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Elite Level</h3>
+                    <p>Performance Training</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Now Section -->
+        <div class="book-now-section">
+            <div class="book-now-content">
+                <h2>READY TO TRANSFORM YOUR GAME?</h2>
+                <p>Join over 1000 athletes and individuals who have already elevated their performance with Jacob's proven training methods.</p>
+                <a href="contact.html" class="book-now-button">
+                    <span>Book Your Session</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="clients-section">
+            <div class="section-header">
+                <h2>TRANSFORMING LIVES</h2>
+                <p>From professional athletes to aspiring players, Jacob has helped over 1000 clients worldwide achieve their highest potential both physically and mentally.</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-header">
+                        <h3>Professional Athletes</h3>
+                        <div class="client-icon"><i class="fas fa-trophy"></i></div>
+                    </div>
+                    <div class="client-list">
+                        <p><strong>Trevor Lacey</strong> - Italy Basketball Player</p>
+                        <p><strong>Denver Jones</strong> - Auburn University</p>
+                        <p><strong>Reggie Ragland</strong> - NFL Player, Super Bowl Champion (Chiefs)</p>
+                        <p><strong>Chester Rogers</strong> - NFL Player (Colts)</p>
+                        <p><strong>Levi Randolph</strong> - Basketball Player in Jerusalem</p>
+                        <p><strong>DK Sanders</strong> - Alabama State → Southern University</p>
+                    </div>
+                </div>
+
+                <div class="client-card">
+                    <div class="client-header">
+                        <h3>Rising Stars</h3>
+                        <div class="client-icon"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="client-list">
+                        <p><strong>Eli G.</strong> - Transformed into top basketball player, received college offers</p>
+                        <p><strong>Josiah</strong> - Beaumont, CA - One of top guards in area, big-time high school player</p>
+                        <p><strong>Zion</strong> - Beaumont, CA - Transformed to highest level, multiple college scholarships expected</p>
+                        <p><strong>Izzy Villanueva</strong> - Elevated game to highest level</p>
+                        <p><strong>Whit3 Iverson</strong> - Joined And1</p>
+                    </div>
+                </div>
+
+                <div class="client-card">
+                    <div class="client-header">
+                        <h3>Weight Loss & Fitness</h3>
+                        <div class="client-icon"><i class="fas fa-heart"></i></div>
+                    </div>
+                    <div class="client-list">
+                        <p><strong>Cooper Merritt</strong> - 11y/o basketball & weight loss (50-80lbs)</p>
+                        <p><strong>Mason</strong> - Lost 30-35lbs, improved basketball skills</p>
+                        <p><strong>Nurse Danielle</strong> - Weight loss & muscle toning</p>
+                        <p><strong>Scott</strong> - 55y/o professional basketball player</p>
+                        <p><strong>Bezzy Soedjak</strong> - Basketball & fitness training</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Jacob</h3>
+                <p>Professional fitness trainer dedicated to helping individuals achieve their fitness goals. With years of experience and a passion for health and wellness, he offers personalized training programs tailored to your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> jacobperry0875@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +1(256)417-3665</p>
+                <p><i class="fas fa-map-marker-alt"></i> Los Angeles, California</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/jacobperryworkouts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/jacobperryworkouts" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jacob Perry. All rights reserved.</p>
+            <p class="made-by">Made by <a href="https://taronabgaryan.com" target="_blank">Taron</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const closeMenuBtn = document.querySelector('.close-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && closeMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('active');
+                    closeMenuBtn.style.display = 'block';
+                    mobileMenuBtn.style.display = 'none';
+                });
+
+                closeMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.add('closing');
+                    setTimeout(() => {
+                        navLinks.classList.remove('active', 'closing');
+                        closeMenuBtn.style.display = 'none';
+                        mobileMenuBtn.style.display = 'block';
+                    }, 300);
+                });
+
+                // Close menu when clicking on a link
+                const menuLinks = navLinks.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.add('closing');
+                        setTimeout(() => {
+                            navLinks.classList.remove('active', 'closing');
+                            closeMenuBtn.style.display = 'none';
+                            mobileMenuBtn.style.display = 'block';
+                        }, 300);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

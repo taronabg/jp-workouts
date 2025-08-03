@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Jacob Perry - Professional Fitness Trainer</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('jpref.jpeg');
+            background-size: cover;
+            background-position: center top !important;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .instagram-link i {
+            color: #ff6b35;
+            font-size: 32px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 250px;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #ccc;
+        }
+
+        .form-group input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .form-group input.valid {
+            border-color: #28a745;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .form-group input.invalid {
+            border-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+        }
+
+        .validation-message {
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .validation-message.valid {
+            color: #28a745;
+            display: block;
+        }
+
+        .validation-message.invalid {
+            color: #dc3545;
+            display: block;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(135deg, #f7931e, #ff6b35);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 107, 53, 1.0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b35;
+        }
+
+        .contact-details h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p,
+        .contact-details a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .contact-details a:hover {
+            color: #ff6b35;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.2rem;
+            background: rgba(255, 107, 53, 0.2);
+            border-radius: 25px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-item:hover {
+            background: rgba(255, 107, 53, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .social-item i {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .social-item span {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .about-item p {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        .close-menu-btn {
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1001;
+            }
+
+            .mobile-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            .close-menu-btn {
+                display: none;
+                position: relative;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.5rem;
+                z-index: 1002;
+            }
+
+            .close-menu-btn img {
+                width: 30px;
+                height: 30px;
+                filter: brightness(0) invert(1);
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 1000;
+                padding: 2rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, #111 0%, #000 100%);
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 1000;
+                padding: 2rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .nav-links.closing {
+                animation: slideUp 0.3s ease-out;
+            }
+
+            .nav-links.active li {
+                margin: 0;
+            }
+
+            .nav-links.active a {
+                font-size: 1.8rem;
+                padding: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .about-section {
+                padding: 2rem 1rem;
+            }
+
+            .stats-section {
+                padding: 2rem 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+            padding-top: 2rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Intl-Tel-Input Custom Styling */
+        .iti {
+            width: 100%;
+        }
+
+        .iti__country-list {
+            background: linear-gradient(135deg, #111 0%, #000 100%);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+        }
+
+        .iti__country {
+            color: #fff;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .iti__country:hover {
+            background: rgba(255, 107, 53, 0.2);
+        }
+
+        .iti__country.iti__active {
+            background: rgba(255, 107, 53, 0.3);
+        }
+
+        .iti__country-name {
+            color: #fff;
+        }
+
+        .iti__dial-code {
+            color: #ccc;
+        }
+
+        .iti__flag {
+            border-radius: 2px;
+        }
+
+        .iti__selected-flag {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px 0 0 8px;
+            transition: all 0.3s ease;
+        }
+
+        .iti__selected-flag:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .iti__arrow {
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid #ff6b35;
+        }
+
+        .iti__arrow--up {
+            border-top: none;
+            border-bottom: 5px solid #ff6b35;
+        }
+
+        /* Black background for overflow */
+        html {
+            background: #000;
+        }
+        .pay-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(.4,2,.6,1);
+            margin-bottom: 1.2rem;
+            border: none;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+            outline: 2px solid #fff;
+            outline-offset: -4px;
+            min-width: 260px;
+            justify-content: center;
+        }
+        .pay-btn i {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        .stripe-btn {
+            background: linear-gradient(135deg, #635bff 60%, #00d4ff 100%);
+            color: #fff;
+        }
+        .stripe-btn:hover {
+            background: linear-gradient(135deg, #00d4ff 0%, #635bff 100%);
+            color: #fff;
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 8px 32px 0 rgba(99,91,255,0.25), 0 2px 8px 0 rgba(0,212,255,0.15);
+        }
+        .paypal-btn {
+            background: linear-gradient(135deg, #003087 60%, #009cde 100%);
+            color: #fff;
+        }
+        .paypal-btn:hover {
+            background: linear-gradient(135deg, #009cde 0%, #003087 100%);
+            color: #fff;
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 8px 32px 0 rgba(0,48,135,0.25), 0 2px 8px 0 rgba(0,156,222,0.15);
+        }
+        .payment-section {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .booking-section {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.13) 0%, rgba(247, 147, 30, 0.13) 100%);
+            padding: 2.5rem 2rem 2.5rem 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media (max-width: 1000px) {
+            .booking-section {
+                max-width: 98vw;
+                padding: 1.5rem 0.5rem;
+            }
+        }
+        .booking-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+        .booking-section p {
+            color: #ccc;
+            margin-bottom: 2.5rem;
+        }
+        .booking-options {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .stripe-card, .paypal-card {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+        .stripe-card {
+            max-width: 420px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 0.7rem 1rem 1rem 1rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        .stripe-card .form-group {
+            margin-bottom: 0.7rem;
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 0.7rem 0 0.7rem 0;
+            letter-spacing: 0.1em;
+            font-size: 1.3rem;
+            user-select: none;
+        }
+        .paypal-card {
+            max-width: 320px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .paypal-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .paypal-btn {
+            margin-top: 0;
+        }
+        .pay-btn, .stripe-btn, .paypal-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+        }
+        .pay-btn:hover, .stripe-btn:hover, .paypal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(135deg, #f7931e, #ff6b35);
+        }
+        .paypal-btn {
+            background: linear-gradient(135deg, #003087, #009cde);
+        }
+        .paypal-btn:hover {
+            background: linear-gradient(135deg, #009cde, #003087);
+        }
+        .booking-section select, .booking-section input {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .booking-section label {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .booking-section .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .booking-section #card-element {
+            background: #fff;
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+        }
+        .booking-section #stripe-payment-message {
+            margin-top: 1rem;
+            color: #fff;
+            min-height: 24px;
+        }
+        .booking-section select {
+            background: rgba(30, 30, 30, 0.85);
+            color: #fff;
+            border: 1.5px solid rgba(255, 107, 53, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23ff6b35" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7.293 7.293a1 1 0 011.414 0L10 8.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .booking-section select:focus {
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+            outline: none;
+        }
+        .booking-section option {
+            background: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="jplogo.png" alt="Jacob Perry Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank" class="instagram-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <img src="menu.png" alt="Open menu">
+            </button>
+            <button class="close-menu-btn" aria-label="Close menu">
+                <img src="close.png" alt="Close menu">
+            </button>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="contact-header">
+            <h1>CONTACT JACOB PERRY</h1>
+            <p>Ready to transform your fitness journey? Get in touch to discuss your goals and start your personalized training program.</p>
+        </div>
+        <!-- Booking/Payment Section FIRST -->
+        <div class="booking-section">
+            <h2>Book Now</h2>
+            <div class="booking-options">
+                <div class="stripe-card">
+                    <form id="stripe-payment-form">
+                        <div class="form-group">
+                            <label for="stripe-name">Full Name</label>
+                            <input type="text" id="stripe-name" name="stripe-name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stripe-email">Email Address</label>
+                            <input type="email" id="stripe-email" name="stripe-email" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stripe-package">Package</label>
+                            <select id="stripe-package" name="stripe-package" required>
+                                <option value="">Select a package</option>
+                                <option value="1on1">1-on-1 Session – $100</option>
+                                <option value="5pack">5-Session Package – $450</option>
+                                <option value="consult">Consultation – $50</option>
+                                <option value="online">Online Program – $150</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-element">Card Details</label>
+                            <div id="card-element"></div>
+                        </div>
+                        <button type="submit" class="pay-btn stripe-btn">Pay Now</button>
+                        <div id="stripe-payment-message" class="validation-message"></div>
+                    </form>
+                </div>
+                <div class="or-divider">OR</div>
+                <div class="paypal-card">
+                    <h3 style="color:#fff; margin-bottom:1rem; font-size:1.1rem; font-weight:600; letter-spacing:0.03em;">Pay with PayPal</h3>
+                    <a href="https://www.paypal.com/paypalme/yourbusiness" target="_blank" class="pay-btn paypal-btn">Pay Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Form & Info Section BELOW -->
+        <div class="contact-layout">
+            <div class="contact-form">
+                <h2>Send a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <div id="email-validation" class="validation-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" maxlength="20" pattern="[\+]?[0-9\s\-\(\)]{7,20}" title="Please enter a valid phone number" autocomplete="tel">
+                        <div id="phone-validation" class="validation-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="personal-training">Personal Training</option>
+                            <option value="injury-recovery">Injury Recovery</option>
+                            <option value="strength-training">Strength Training</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="sports-performance">Sports Performance</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your fitness goals and what you'd like to achieve..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:jacob@jacobperryfitness.com">jacob@jacobperryfitness.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Los Angeles, California<br>Available for in-person and virtual training</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-details">
+                        <h3>Availability</h3>
+                        <p>Currently closed for new clients<br>Join the waitlist for future openings</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Follow My Journey</h3>
+                    <div class="social-grid">
+                        <a href="https://www.instagram.com/jacobperryworkouts" target="_blank" class="social-item">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/jacobperryworkouts" target="_blank" class="social-item">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jacobperryworkouts" target="_blank" class="social-item">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@jacobperryworkouts" target="_blank" class="social-item">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Jacob</h3>
+                <p>Professional fitness trainer dedicated to helping individuals achieve their fitness goals. With years of experience and a passion for health and wellness, he offers personalized training programs tailored to your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> jacob@jacobperryfitness.com</p>
+                <p><i class="fas fa-phone"></i> +1 (234) 567-890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Los Angeles, California</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jacobperryworkouts" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/jacobperryworkouts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/jacobperryworkouts" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jacob Perry. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+const stripe = Stripe('pk_test_your_publishable_key_here');
+const elements = stripe.elements();
+const card = elements.create('card', {
+    style: {
+        base: {
+            color: '#222',
+            fontFamily: 'Montserrat, Arial, sans-serif',
+            fontSmoothing: 'antialiased',
+            fontSize: '16px',
+            '::placeholder': { color: '#888' }
+        },
+        invalid: { color: '#dc3545' }
+    }
+});
+card.mount('#card-element');
+
+const form = document.getElementById('stripe-payment-form');
+const paymentMessage = document.getElementById('stripe-payment-message');
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    paymentMessage.textContent = 'Processing payment...';
+    const name = document.getElementById('stripe-name').value;
+    const email = document.getElementById('stripe-email').value;
+    const selectedPackage = document.getElementById('stripe-package').value;
+    if (!selectedPackage) {
+        paymentMessage.textContent = 'Please select a package.';
+        return;
+    }
+    // 1. Send package to backend to create PaymentIntent
+    try {
+        const response = await fetch('/create-payment-intent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                package: selectedPackage
+            })
+        });
+        const data = await response.json();
+        if (!data.clientSecret) {
+            paymentMessage.textContent = 'Error: Could not create payment.';
+            return;
+        }
+        // 2. Confirm card payment
+        const result = await stripe.confirmCardPayment(data.clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: { name: name, email: email }
+            }
+        });
+        if (result.error) {
+            paymentMessage.textContent = result.error.message;
+        } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+            paymentMessage.textContent = 'Payment successful! Thank you for booking.';
+            form.reset();
+            card.clear();
+        }
+    } catch (err) {
+        paymentMessage.textContent = 'Error: ' + err.message;
+    }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+<script>
+// Email validation
+const emailInput = document.getElementById('email');
+const emailValidation = document.getElementById('email-validation');
+emailInput.addEventListener('input', function() {
+    const value = emailInput.value.trim();
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    if (value === '') {
+        emailInput.classList.remove('valid', 'invalid');
+        emailValidation.textContent = '';
+        emailValidation.className = 'validation-message';
+    } else if (valid) {
+        emailInput.classList.add('valid');
+        emailInput.classList.remove('invalid');
+        emailValidation.textContent = 'Valid email address';
+        emailValidation.className = 'validation-message valid';
+    } else {
+        emailInput.classList.add('invalid');
+        emailInput.classList.remove('valid');
+        emailValidation.textContent = 'Please enter a valid email address';
+        emailValidation.className = 'validation-message invalid';
+    }
+});
+// Intl-Tel-Input initialization
+const phoneInput = document.querySelector("#phone");
+const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "us",
+    nationalMode: false,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+    allowDropdown: true,
+    separateDialCode: true
+});
+// Phone validation feedback
+phoneInput.addEventListener('input', function() {
+    if (phoneInput.value.trim() === "") {
+        phoneInput.classList.remove('valid', 'invalid');
+    } else if (iti.isValidNumber()) {
+        phoneInput.classList.remove('invalid');
+        phoneInput.classList.add('valid');
+    } else {
+        phoneInput.classList.remove('valid');
+        phoneInput.classList.add('invalid');
+    }
+});
+
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && closeMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.add('active');
+            closeMenuBtn.style.display = 'block';
+            mobileMenuBtn.style.display = 'none';
+        });
+
+        closeMenuBtn.addEventListener('click', function() {
+            navLinks.classList.add('closing');
+            setTimeout(() => {
+                navLinks.classList.remove('active', 'closing');
+                closeMenuBtn.style.display = 'none';
+                mobileMenuBtn.style.display = 'block';
+            }, 300);
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = navLinks.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.add('closing');
+                setTimeout(() => {
+                    navLinks.classList.remove('active', 'closing');
+                    closeMenuBtn.style.display = 'none';
+                    mobileMenuBtn.style.display = 'block';
+                }, 300);
+            });
+        });
+    }
+});
+</script>
+</body>
+</html> 
